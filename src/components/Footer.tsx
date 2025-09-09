@@ -80,9 +80,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-border/20 mt-8 pt-8 text-center">
-          <p className="text-muted-foreground text-sm">
-            (@2025 Made by M.Hammad)
-          </p>
+          <p className="text-muted-foreground text-sm">@2025 Made by M.Hammad</p>
         </div>
       </div>
     </footer>
