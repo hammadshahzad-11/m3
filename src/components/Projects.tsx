@@ -1,7 +1,7 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -11,7 +11,6 @@ const Projects = () => {
       image: "https://cdn.builder.io/api/v1/image/assets%2Fc8af293e0fc349288f37bf92ad4b1214%2F1c8299a40599445b93498bcf218da831?format=webp&width=800",
       technologies: ["WordPress", "WooCommerce", "PHP", "MySQL", "SEO"],
       liveUrl: "https://downtownpackaging.co.uk/",
-      githubUrl: "#",
       featured: true
     },
     {
@@ -20,49 +19,11 @@ const Projects = () => {
       image: "https://cdn.builder.io/api/v1/image/assets%2Fc8af293e0fc349288f37bf92ad4b1214%2Fe29cd70bc869499bbe91b79c57a0d40a?format=webp&width=800",
       technologies: ["MongoDB", "Express", "React", "Node.js"],
       liveUrl: "https://techhubsystems.com/index.html",
-      githubUrl: "#",
       featured: true
-    },
-    {
-      title: "Task Management App",
-      description: "Real-time collaborative task management application with team features, notifications, and progress tracking.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      technologies: ["React", "Firebase", "TypeScript", "Material-UI"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      title: "Restaurant Website",
-      description: "Modern restaurant website with online ordering system, table reservations, and content management.",
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop",
-      technologies: ["Next.js", "Tailwind", "Sanity CMS", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      title: "Portfolio Dashboard",
-      description: "Interactive portfolio dashboard with analytics, project management, and client communication features.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      technologies: ["Vue.js", "Node.js", "PostgreSQL", "Chart.js"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      title: "Blog Platform",
-      description: "Custom blogging platform with rich text editor, SEO optimization, and social sharing capabilities.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-      technologies: ["WordPress", "Custom Theme", "PHP", "JavaScript"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
     }
   ];
 
   const featuredProjects = projects.filter(p => p.featured);
-  const otherProjects = projects.filter(p => !p.featured);
 
   return (
     <section id="projects" className="py-20 px-6">
@@ -126,86 +87,11 @@ const Projects = () => {
                     Live Demo
                   </a>
                 </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="flex-1 group/btn hover:bg-secondary hover:text-secondary-foreground"
-                  asChild
-                >
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2 group-hover/btn:animate-pulse" />
-                    Code
-                  </a>
-                </Button>
               </CardFooter>
             </Card>
           ))}
         </div>
 
-        {/* Other Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {otherProjects.map((project, index) => (
-            <Card
-              key={project.title}
-              className="glass-card hover:shadow-glow transition-all duration-500 group animate-fade-in-up"
-              style={{ animationDelay: `${0.4 + (index * 0.1)}s` }}
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              
-              <CardHeader className="pb-2">
-                <CardTitle className="text-lg">{project.title}</CardTitle>
-              </CardHeader>
-              
-              <CardContent className="pb-2">
-                <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1">
-                  {project.technologies.slice(0, 2).map((tech) => (
-                    <Badge key={tech} variant="outline" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
-                  {project.technologies.length > 2 && (
-                    <Badge variant="outline" className="text-xs">
-                      +{project.technologies.length - 2}
-                    </Badge>
-                  )}
-                </div>
-              </CardContent>
-              
-              <CardFooter className="flex gap-2 pt-2">
-                <Button variant="ghost" size="sm" className="flex-1 p-2" asChild>
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </Button>
-                <Button variant="ghost" size="sm" className="flex-1 p-2" asChild>
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4" />
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-
-        {/* View More Button */}
-        <div className="text-center mt-12">
-          <Button
-            variant="outline"
-            size="lg"
-            className="px-8 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-          >
-            View All Projects
-          </Button>
-        </div>
       </div>
     </section>
   );
