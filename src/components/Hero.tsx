@@ -33,10 +33,17 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background banner image from provided attachment */}
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets%2Fc8af293e0fc349288f37bf92ad4b1214%2F1c8299a40599445b93498bcf218da831?format=webp&width=1600"
+        alt="Downtown Packaging banner"
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-gradient-hero" aria-hidden="true" />
+
       {/* Animated Background */}
       <StarsBackground count={160} />
-      
-      {/* Floating Elements */}
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-in">
@@ -53,20 +60,19 @@ const Hero = () => {
           </div>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up">
-            Crafting exceptional web experiences with modern technologies. 
+            Crafting exceptional web experiences with modern technologies.
             Specialized in full-stack development using MERN stack and WordPress solutions.
           </p>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-gradient-primary hue-animated hover:shadow-glow transition-all duration-300 px-8 py-6 text-lg"
             >
               View My Work
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 px-8 py-6 text-lg"
             >
@@ -74,7 +80,6 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Social Links */}
           <div className="flex justify-center space-x-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             {[
               { icon: Github, href: "#", label: "GitHub" },
@@ -94,9 +99,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator - Fixed Position */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <button 
+        <button
           onClick={() => {
             const aboutSection = document.getElementById('about');
             if (aboutSection) {
