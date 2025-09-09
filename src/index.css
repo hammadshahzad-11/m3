@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Portfolio Design System - Dark Theme with Gradient Accents */
+
+@layer base {
+  :root {
+    --background: 225 12% 5%;
+    --foreground: 0 0% 96%;
+
+    --card: 225 10% 7%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 225 10% 7%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 46 85% 55%;
+    --primary-foreground: 230 15% 8%;
+
+    --secondary: 225 8% 12%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 225 8% 14%;
+    --muted-foreground: 240 4% 60%;
+
+    --accent: 40 80% 58%;
+    --accent-foreground: 230 15% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 225 9% 18%;
+    --input: 225 9% 18%;
+    --ring: 46 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Premium Luxury Colors */
+    --gradient-primary: 46 85% 55%;
+    --gradient-secondary: 38 80% 58%;
+    --gradient-accent: 50 90% 60%;
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+    --shadow-card: 0 20px 40px -10px hsl(225 14% 8% / 0.9);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 230 14% 6%;
+    --foreground: 0 0% 96%;
+
+    --card: 230 12% 8%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 230 12% 8%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 46 90% 60%;
+    --primary-foreground: 230 15% 8%;
+
+    --secondary: 230 10% 14%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 230 10% 16%;
+    --muted-foreground: 220 8% 65%;
+
+    --accent: 40 82% 60%;
+    --accent-foreground: 230 15% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 12% 20%;
+    --input: 230 12% 20%;
+    --ring: 46 90% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom animations and utilities */
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply relative;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg p-[1px] bg-gradient-to-r from-primary via-accent to-secondary;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-md border border-border/20;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .typing-animation::after {
+    content: '|';
+    @apply animate-pulse text-primary;
+  }
+}
+
+/* Starfield animations */
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes star-drift {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Gold hue cycling utility for hero accents */
+@keyframes hue-gold-cycle {
+  0% { filter: hue-rotate(-40deg) saturate(1.05) brightness(1.02); }
+  50% { filter: hue-rotate(40deg) saturate(1.1) brightness(1.04); }
+  100% { filter: hue-rotate(-40deg) saturate(1.05) brightness(1.02); }
+}
+.hue-animated {
+  animation: hue-gold-cycle 5s ease-in-out infinite;
+  will-change: filter;
+}
+
+/* Smooth transitions when theme variables change */
+.theme-transition * {
+  transition: background-color 600ms ease, color 600ms ease, border-color 600ms ease, fill 600ms ease, stroke 600ms ease;
+}
