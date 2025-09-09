@@ -67,6 +67,10 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <Button
               size="lg"
+              onClick={() => {
+                const el = document.getElementById('projects');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="bg-gradient-primary hue-animated hover:shadow-glow transition-all duration-300 px-8 py-6 text-lg"
             >
               View My Work
@@ -74,9 +78,10 @@ const Hero = () => {
             <Button
               variant="outline"
               size="lg"
+              asChild
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 px-8 py-6 text-lg"
             >
-              Download Resume
+              <a href="#contact">Contact Me</a>
             </Button>
           </div>
 
