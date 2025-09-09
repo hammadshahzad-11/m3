@@ -81,7 +81,7 @@ const Hero = () => {
               asChild
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 px-8 py-6 text-lg"
             >
-              <a href="#contact">Contact Me</a>
+              <a href="https://wa.me/923126298747" target="_blank" rel="noopener noreferrer">Contact Me</a>
             </Button>
           </div>
 
