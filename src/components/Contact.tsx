@@ -75,15 +75,12 @@ const Contact = () => {
               </Card>
             ))}
 
-            <Card className="glass-card animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <Card className="glass-card animate-fade-in-up md:col-span-2 lg:col-span-3" style={{ animationDelay: '0.4s' }}>
               <CardContent className="p-6">
-                <h4 className="font-semibold mb-4">Available for</h4>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>• Full-stack web development</p>
-                  <p>• WordPress solutions</p>
-                  <p>• Technical consultations</p>
-                  <p>• Code reviews & optimization</p>
-                </div>
+                <h4 className="font-semibold mb-4 text-center">Available for</h4>
+                <p className="text-sm text-muted-foreground text-center whitespace-nowrap overflow-x-auto">
+                  Full-stack web development • WordPress solutions • Technical consultations • Code reviews & optimization
+                </p>
               </CardContent>
             </Card>
           </div>
