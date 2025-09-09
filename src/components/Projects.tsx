@@ -6,20 +6,20 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack MERN e-commerce application with advanced features including real-time inventory, payment integration, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
-      liveUrl: "#",
+      title: "Downtown Packaging (WordPress)",
+      description: "E‑commerce packaging website built on WordPress with WooCommerce, custom product pages, quote forms, and performance optimizations.",
+      image: "https://cdn.builder.io/api/v1/image/assets%2Fc8af293e0fc349288f37bf92ad4b1214%2F1c8299a40599445b93498bcf218da831?format=webp&width=800",
+      technologies: ["WordPress", "WooCommerce", "PHP", "MySQL", "SEO"],
+      liveUrl: "https://downtownpackaging.co.uk/",
       githubUrl: "#",
       featured: true
     },
     {
-      title: "WordPress Multi-Site",
-      description: "Custom WordPress multi-site network with advanced user management, custom post types, and integrated payment system.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      technologies: ["WordPress", "PHP", "MySQL", "Custom Themes", "WooCommerce"],
-      liveUrl: "#",
+      title: "Tech‑Hub Systems (MERN)",
+      description: "Educational institute site implemented with the MERN stack, featuring course listings, contact/lead capture, and responsive UI.",
+      image: "https://cdn.builder.io/api/v1/image/assets%2Fc8af293e0fc349288f37bf92ad4b1214%2Fe29cd70bc869499bbe91b79c57a0d40a?format=webp&width=800",
+      technologies: ["MongoDB", "Express", "React", "Node.js"],
+      liveUrl: "https://techhubsystems.com/index.html",
       githubUrl: "#",
       featured: true
     },
