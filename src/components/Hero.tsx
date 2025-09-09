@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Linkedin, Mail } from "lucide-react";
 import StarsBackground from "./StarsBackground";
 
 const Hero = () => {
@@ -86,20 +86,25 @@ const Hero = () => {
           </div>
 
           <div className="flex justify-center space-x-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Mail, href: "#contact", label: "Email" }
-            ].map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300 group"
-                aria-label={label}
-              >
-                <Icon className="w-6 h-6 group-hover:animate-pulse" />
-              </a>
-            ))}
+            <a
+              href="https://www.linkedin.com/in/muhammad-hammad826"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300 group"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-6 h-6 group-hover:animate-pulse" />
+            </a>
+            <button
+              onClick={() => {
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border/20 hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300 group"
+              aria-label="Email"
+            >
+              <Mail className="w-6 h-6 group-hover:animate-pulse" />
+            </button>
           </div>
         </div>
       </div>
