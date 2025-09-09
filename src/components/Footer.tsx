@@ -1,11 +1,10 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Linkedin, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-hammad826", label: "LinkedIn" },
     { icon: Mail, href: "mailto:hammadshahzaddev@gmail.com", label: "Email" }
   ];
 
@@ -53,14 +52,27 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Connect</h4>
             <div className="flex justify-center md:justify-end space-x-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="p-2 rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"
-                  aria-label={label}
-                >
-                  <Icon className="w-5 h-5" />
-                </a>
+                label === 'Email' ? (
+                  <button
+                    key={label}
+                    onClick={() => scrollToSection('#contact')}
+                    className="p-2 rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"
+                    aria-label={label}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </button>
+                ) : (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all duration-300"
+                    aria-label={label}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </a>
+                )
               ))}
             </div>
           </div>
