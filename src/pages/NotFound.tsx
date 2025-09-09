@@ -26,7 +26,7 @@ const NotFound = () => {
             asChild
             className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
           >
-            <a href="/">
+            <a href="#/">
               <Home className="w-4 h-4 mr-2" />
               Back to Home
             </a>
