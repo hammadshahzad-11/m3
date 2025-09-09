@@ -16,13 +16,12 @@ const App = () => (
       <Sonner />
       {/** Cycles brand colors every 5 seconds across the site */}
       <ThemeCycler intervalMs={5000} />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
