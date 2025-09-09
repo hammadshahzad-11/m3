@@ -80,10 +80,8 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-border/20 mt-8 pt-8 text-center">
-          <p className="text-muted-foreground text-sm flex items-center justify-center gap-2">
-            © {currentYear} M.Hammad. Made with 
-            <Heart className="w-4 h-4 text-red-500 animate-pulse" />
-            and lots of code.
+          <p className="text-muted-foreground text-sm">
+            (@2025 Made by M.Hammad)
           </p>
         </div>
       </div>
