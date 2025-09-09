@@ -9,6 +9,11 @@ const Footer = () => {
     { icon: Mail, href: "mailto:hammadshahzaddev@gmail.com", label: "Email" }
   ];
 
+  const scrollToSection = (href: string) => {
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-card/50 border-t border-border/20 py-12">
       <div className="container mx-auto px-6">
@@ -26,18 +31,19 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               {[
+                { href: "#hero", label: "Home" },
                 { href: "#about", label: "About" },
                 { href: "#skills", label: "Skills" },
                 { href: "#projects", label: "Projects" },
                 { href: "#contact", label: "Contact" }
               ].map((link) => (
-                <a
+                <button
                   key={link.href}
-                  href={link.href}
+                  onClick={() => scrollToSection(link.href)}
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
             </div>
           </div>
